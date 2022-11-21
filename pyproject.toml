@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "valida-cpf"
+version = "0.1.0"
+description = ""
+authors = ["José Guilherme Fernandes <102261883+JoseGuilherme03@users.noreply.github.com>"]
+readme = "README.md"
+packages = [{include = "valida_cpf"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+tk = "^0.1.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
