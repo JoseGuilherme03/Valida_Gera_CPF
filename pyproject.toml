@@ -9,7 +9,11 @@ packages = [{include = "valida_cpf"}]
 [tool.poetry.dependencies]
 python = "^3.11"
 tk = "^0.1.0"
+pytest = "^7.2.1"
 
+
+[tool.poetry.group.dev.dependencies]
+black = "^23.1.0"
 
 [build-system]
 requires = ["poetry-core"]

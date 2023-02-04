@@ -11,7 +11,7 @@ def etapa1_dv2(cpf):
 
 
 def etapa2_dv1(cpf):
-    resultado = etapa1_dv1(cpf) * 10 % 11 
+    resultado = etapa1_dv1(cpf) * 10 % 11
     return resultado if resultado < 10 else 0
 
 
@@ -22,7 +22,7 @@ def etapa2_dv2(cpf):
 
 def filtra_mascara_cpf(cpf):
     return "".join([num for num in cpf if num.isdigit()])
-    
+
 
 def dv(cpf):
     cpf = filtra_mascara_cpf(cpf)
@@ -41,18 +41,22 @@ def verifica_sequencia_cpf(cpf):
 
 def validador_cpf(cpf):
     cpf_filtrado = filtra_mascara_cpf(cpf)
-    if verifica_tem_11_numeros(cpf_filtrado) and not verifica_sequencia_cpf(cpf_filtrado) and dv(cpf_filtrado[0:9]) == cpf_filtrado[-2:]:
+    if (
+        verifica_tem_11_numeros(cpf_filtrado)
+        and not verifica_sequencia_cpf(cpf_filtrado)
+        and dv(cpf_filtrado[0:9]) == cpf_filtrado[-2:]
+    ):
         return True
     return False
 
 
 def gera_cpf_com_mascara():
-    cpf = "".join([str(randint(0,9)) for _ in range(0,9)])
+    cpf = "".join([str(randint(0, 9)) for _ in range(0, 9)])
 
     return f"{cpf[:3]}.{cpf[3:6]}.{cpf[6:9]}-{dv(cpf)}"
 
 
 def gera_cpf_sem_mascara():
-    cpf = "".join([str(randint(0,9)) for _ in range(0,9)])
+    cpf = "".join([str(randint(0, 9)) for _ in range(0, 9)])
 
     return cpf + dv(cpf)
